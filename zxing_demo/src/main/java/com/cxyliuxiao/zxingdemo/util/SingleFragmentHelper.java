@@ -1,8 +1,10 @@
-package com.cxyliuxiao.zxingdemo.base;
+package com.cxyliuxiao.zxingdemo.util;
 
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+
+import com.cxyliuxiao.zxingdemo.base.SingleFragmentActivity;
 
 /**
  * Created by Poker on 2017/2/16.

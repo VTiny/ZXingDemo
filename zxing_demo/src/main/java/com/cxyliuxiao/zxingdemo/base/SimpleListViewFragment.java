@@ -10,8 +10,8 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
-import com.pk.poker.R;
-import com.pk.poker.util.SingleFragmentHelper;
+import com.cxyliuxiao.zxingdemo.R;
+import com.cxyliuxiao.zxingdemo.util.SingleFragmentHelper;
 
 import java.util.ArrayList;
 import java.util.List;

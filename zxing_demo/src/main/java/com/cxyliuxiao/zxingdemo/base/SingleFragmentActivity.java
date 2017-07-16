@@ -8,6 +8,7 @@ import android.support.v4.app.FragmentTransaction;
 import android.text.TextUtils;
 
 import com.cxyliuxiao.zxingdemo.R;
+import com.cxyliuxiao.zxingdemo.util.SingleFragmentHelper;
 
 /**
  * Created by Poker on 2017/2/16.

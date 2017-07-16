@@ -5,8 +5,8 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.View;
 
-import com.pk.poker.constant.StringConstant;
-import com.pk.poker.util.LogUtil;
+import com.cxyliuxiao.zxingdemo.constant.StringConstant;
+import com.cxyliuxiao.zxingdemo.util.LogUtil;
 
 /**
  * Created by Poker on 2017/2/16.

@@ -1,20 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.cxyliuxiao.zxingdemo.MainActivity">
+    android:orientation="vertical"
+    android:padding="@dimen/standard_padding">
 
     <Button
-        android:id="@+id/btn_qrcode"
-        android:layout_width="160dp"
-        android:layout_height="63dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:text="进入二维码扫描"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        tools:layout_editor_absoluteY="31dp" />
+        android:id="@+id/btn_scan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Scan QR code" />
 
-</android.support.constraint.ConstraintLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Scan result: "
+        android:textSize="@dimen/text_size_text" />
+
+    <TextView
+        android:id="@+id/txt_scan_result"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@drawable/txt_border" />
+
+    <Button
+        android:id="@+id/btn_generate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="generate qr code" />
+
+    <ImageView
+        android:layout_width="200dp"
+        android:id="@+id/img_generate"
+        android:layout_height="200dp"
+        android:layout_gravity="center_horizontal" />
+
+</LinearLayout>
