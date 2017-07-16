@@ -7,8 +7,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.text.TextUtils;
 
-import com.pk.poker.R;
-import com.pk.poker.util.SingleFragmentHelper;
+import com.cxyliuxiao.zxingdemo.R;
 
 /**
  * Created by Poker on 2017/2/16.
