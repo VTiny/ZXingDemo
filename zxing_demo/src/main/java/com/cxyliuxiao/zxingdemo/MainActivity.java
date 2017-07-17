@@ -15,9 +15,9 @@ public class MainActivity extends BaseActivity {
     public static final int REQUEST_CODE_SCAN = 1001;
 
     private Button scanBtn;
-    private TextView scanTxt;
+    private TextView scanResultTxt;
     private Button generatebtn;
-    private ImageView generatedImg;
+    private ImageView generateResultImg;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,8 +30,8 @@ public class MainActivity extends BaseActivity {
         super.initView();
         scanBtn = (Button) findViewById(R.id.btn_scan);
         generatebtn = (Button) findViewById(R.id.btn_generate);
-        scanTxt = (TextView) findViewById(R.id.btn_scan);
-        generatedImg = (ImageView) findViewById(R.id.img_generate);
+        scanResultTxt = (TextView) findViewById(R.id.txt_scan_result);
+        generateResultImg = (ImageView) findViewById(R.id.img_generate);
     }
 
     @Override
@@ -56,7 +56,15 @@ public class MainActivity extends BaseActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         switch (requestCode) {
-            
+            case REQUEST_CODE_SCAN:
+                if (resultCode == RESULT_OK) {
+                    String result = data.getStringExtra("scan_result");
+                    scanResultTxt.setText(result);
+                } else {
+                    scanResultTxt.setText("error");
+                }
+                break;
+
         }
     }
 }
