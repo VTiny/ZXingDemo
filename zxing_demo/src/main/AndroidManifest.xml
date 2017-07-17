@@ -17,6 +17,7 @@
             </intent-filter>
         </activity>
         <activity android:name="com.google.zxing.client.android.CaptureActivity" />
+        <activity android:name="com.google.zxing.client.android.encode.EncodeActivity" />
     </application>
 
     <uses-permission android:name="android.permission.CAMERA" />　　

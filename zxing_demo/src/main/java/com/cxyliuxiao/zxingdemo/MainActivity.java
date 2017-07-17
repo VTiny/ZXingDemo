@@ -9,10 +9,14 @@ import android.widget.TextView;
 
 import com.cxyliuxiao.zxingdemo.base.BaseActivity;
 import com.google.zxing.client.android.CaptureActivity;
+import com.google.zxing.client.android.Contents;
+import com.google.zxing.client.android.Intents;
+import com.google.zxing.client.android.encode.EncodeActivity;
 
 public class MainActivity extends BaseActivity {
 
     public static final int REQUEST_CODE_SCAN = 1001;
+    public static final int REQUEST_CODE_GENERATE = 1002;
 
     private Button scanBtn;
     private TextView scanResultTxt;
@@ -47,7 +51,11 @@ public class MainActivity extends BaseActivity {
         generatebtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Intent intent = new Intent(view.getContext(), EncodeActivity.class);
+                intent.setAction(Intents.Encode.ACTION);
+                intent.putExtra(Intents.Encode.TYPE, Contents.Type.TEXT);
+                intent.putExtra(Intents.Encode.DATA, "asdfasdfads");
+                startActivityForResult(intent, REQUEST_CODE_GENERATE);
             }
         });
     }
