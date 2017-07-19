@@ -349,7 +349,7 @@ final class QRCodeEncoder {
             return null;
         }
         Map<EncodeHintType, Object> hints = null;
-        String encoding = guessAppropriateEncoding(contentsToEncode);
+        String encoding = guessAppropriateEncoding(contentsToEncode);//获取编码方式
         if (encoding != null) {
             hints = new EnumMap<>(EncodeHintType.class);
             hints.put(EncodeHintType.CHARACTER_SET, encoding);

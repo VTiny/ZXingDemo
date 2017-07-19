@@ -2,8 +2,10 @@ package com.cxyliuxiao.zxingdemo;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -22,6 +24,7 @@ public class MainActivity extends BaseActivity {
     private TextView scanResultTxt;
     private Button generatebtn;
     private ImageView generateResultImg;
+    private EditText generateTxt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +39,7 @@ public class MainActivity extends BaseActivity {
         generatebtn = (Button) findViewById(R.id.btn_generate);
         scanResultTxt = (TextView) findViewById(R.id.txt_scan_result);
         generateResultImg = (ImageView) findViewById(R.id.img_generate);
+        generateTxt = (EditText) findViewById(R.id.edit_generate);
     }
 
     @Override
@@ -51,11 +55,14 @@ public class MainActivity extends BaseActivity {
         generatebtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(view.getContext(), EncodeActivity.class);
-                intent.setAction(Intents.Encode.ACTION);
-                intent.putExtra(Intents.Encode.TYPE, Contents.Type.TEXT);
-                intent.putExtra(Intents.Encode.DATA, "asdfasdfads");
-                startActivityForResult(intent, REQUEST_CODE_GENERATE);
+                String content = generateTxt.getText().toString();
+                if (!TextUtils.isEmpty(content)) {
+                    Intent intent = new Intent(view.getContext(), EncodeActivity.class);
+                    intent.setAction(Intents.Encode.ACTION);
+                    intent.putExtra(Intents.Encode.TYPE, Contents.Type.TEXT);
+                    intent.putExtra(Intents.Encode.DATA, content);
+                    startActivityForResult(intent, REQUEST_CODE_GENERATE);
+                }
             }
         });
     }
