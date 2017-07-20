@@ -15,7 +15,7 @@
 - 矩阵式二维码
     - 又称棋盘式二维条码
     - 在一个矩形空间通过黑、白像素在矩阵中的不同分布进行编码
-    - 用点（方点、圆点或其他形状）的出现表示二进制“1”，点的不出现表示二进制的“0”
+    - 有点 - 1、无点 - 0
     - Code One、MaxiCode、**QR Code**、 Data Matrix、Han Xin Code、Grid Matrix
     - Quick Response Code
 
@@ -70,8 +70,34 @@
 
 ![img](file:///var/folders/29/srh45zys4lz9whn2qdkcwxdc0000gn/T/WizNote/75cefb8a-fcbe-4543-a6e0-13e4037478d8/index_files/74954455.png)
 
-#### 1.4.1 结构
+#### 1.4.3 结构
 
 ![img](file:///var/folders/29/srh45zys4lz9whn2qdkcwxdc0000gn/T/WizNote/75cefb8a-fcbe-4543-a6e0-13e4037478d8/index_files/74244402.png)
 
 ![img](file:///var/folders/29/srh45zys4lz9whn2qdkcwxdc0000gn/T/WizNote/75cefb8a-fcbe-4543-a6e0-13e4037478d8/index_files/74253509.png)
+
+#### 1.4.4 生成过程
+
+1. 数据分析
+2. 数据编码
+   1. 分组、转为二进制序列
+   2. 添加字符数
+   3. 添加模式指示符
+3. 纠错编码
+4. 构造最终数据信息
+5. 构造矩阵
+6. 附加信息（格式、版本信息）
+
+![img](file:///var/folders/29/srh45zys4lz9whn2qdkcwxdc0000gn/T/WizNote/75cefb8a-fcbe-4543-a6e0-13e4037478d8/index_files/77388505.png)
+
+
+
+## 2. ZXing
+
+> [Github地址](https://github.com/zxing/zxing)
+
+### 2.1 环境搭建
+
+### 2.2 使用方式
+
+### 2.3 源码分析
