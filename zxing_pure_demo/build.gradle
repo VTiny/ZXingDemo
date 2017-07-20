@@ -23,6 +23,7 @@ android {
 }
 
 dependencies {
+    compile project(path: ':zxing_pure_lib')
     compile fileTree(dir: 'libs', include: ['*.jar'])
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
