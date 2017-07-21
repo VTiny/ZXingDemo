@@ -4,6 +4,7 @@
 
 * [二维码简介](#二维码简介)
 * [ZXing](#2.-zxing)
+* [ZXing](#2)
 * [2.ZXing](#ZXing)
 
 
