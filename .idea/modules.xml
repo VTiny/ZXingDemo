@@ -5,8 +5,8 @@
       <module fileurl="file://$PROJECT_DIR$/ZXingDemo.iml" filepath="$PROJECT_DIR$/ZXingDemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/zxing_demo/zxing_demo.iml" filepath="$PROJECT_DIR$/zxing_demo/zxing_demo.iml" />
       <module fileurl="file://$PROJECT_DIR$/zxing_lib/zxing_lib.iml" filepath="$PROJECT_DIR$/zxing_lib/zxing_lib.iml" />
-      <module fileurl="file://$PROJECT_DIR$/zxing_pure_demo/zxing_pure_demo.iml" filepath="$PROJECT_DIR$/zxing_pure_demo/zxing_pure_demo.iml" />
-      <module fileurl="file://$PROJECT_DIR$/zxing_pure_lib/zxing_pure_lib.iml" filepath="$PROJECT_DIR$/zxing_pure_lib/zxing_pure_lib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/zxing_simple_demo/zxing_simple_demo.iml" filepath="$PROJECT_DIR$/zxing_simple_demo/zxing_simple_demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/zxing_simple_lib/zxing_simple_lib.iml" filepath="$PROJECT_DIR$/zxing_simple_lib/zxing_simple_lib.iml" />
     </modules>
   </component>
 </project>
