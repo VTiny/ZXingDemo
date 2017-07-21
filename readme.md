@@ -1,5 +1,15 @@
 [TOC]
 
+### 目录
+
+[二维码简介](#二维码简介)
+
+
+
+
+
+
+
 ## 1. 二维码简介
 
 ### 1.1 定义
@@ -24,13 +34,13 @@
     - 传统的条形码只能处理20位左右的信息量，QR码可处理条形码的几十倍到几百倍的信息量
     - 所有数据类型 - 数字、英文字母、日文字母、汉字、符号、二进制、控制码等
 
-![img](file:///var/folders/29/srh45zys4lz9whn2qdkcwxdc0000gn/T/WizNote/75cefb8a-fcbe-4543-a6e0-13e4037478d8/index_files/73201728.png)
+![img](http://7xravb.com1.z0.glb.clouddn.com/1.jpeg)
 
 - 空间小
     - QR码使用纵向和横向两个方向处理数据，如果是相同的信息量，QR码所占空间为条形码的十分之一左右
     - Micro QR码，更小
 
-![img](file:///var/folders/29/srh45zys4lz9whn2qdkcwxdc0000gn/T/WizNote/75cefb8a-fcbe-4543-a6e0-13e4037478d8/index_files/72706027.png)
+![img](http://7xravb.com1.z0.glb.clouddn.com/2.jpeg)
 
 - 支持各种字符
   - 日本人发明，非常适合处理日文和汉字
@@ -39,12 +49,12 @@
   - 最多可纠错约30%
 - 从任意方向读取
 
-![img](file:///var/folders/29/srh45zys4lz9whn2qdkcwxdc0000gn/T/WizNote/75cefb8a-fcbe-4543-a6e0-13e4037478d8/index_files/73083322.png)
+![img](http://7xravb.com1.z0.glb.clouddn.com/3.jpeg)
 
 - 支持合并
   - QR码可以将数据分割为多个编码，最多支持16个QR码
 
-![img](file:///var/folders/29/srh45zys4lz9whn2qdkcwxdc0000gn/T/WizNote/75cefb8a-fcbe-4543-a6e0-13e4037478d8/index_files/73088194.png)
+![img](http://7xravb.com1.z0.glb.clouddn.com/4.jpeg)
 
 ### 1.4 QR码
 
@@ -58,7 +68,11 @@
 - 横纵向各以4码元为单位递增
 - 版本40: 177x177
 
-![img](file:///var/folders/29/srh45zys4lz9whn2qdkcwxdc0000gn/T/WizNote/75cefb8a-fcbe-4543-a6e0-13e4037478d8/index_files/74111425.png)
+![img](http://7xravb.com1.z0.glb.clouddn.com/5.jpeg)
+
+![](http://7xravb.com1.z0.glb.clouddn.com/5.1.png)
+
+
 
 #### 1.4.2 纠错级别
 
@@ -68,13 +82,13 @@
 - 4个级别，根据环境选择
 - 级别提高 -> 纠错能力提高 -> 数据量增加 -> 编码尺寸增加
 
-![img](file:///var/folders/29/srh45zys4lz9whn2qdkcwxdc0000gn/T/WizNote/75cefb8a-fcbe-4543-a6e0-13e4037478d8/index_files/74954455.png)
+![img](http://7xravb.com1.z0.glb.clouddn.com/6.jpeg)
 
 #### 1.4.3 结构
 
-![img](file:///var/folders/29/srh45zys4lz9whn2qdkcwxdc0000gn/T/WizNote/75cefb8a-fcbe-4543-a6e0-13e4037478d8/index_files/74244402.png)
+![img](http://7xravb.com1.z0.glb.clouddn.com/7.jpeg)
 
-![img](file:///var/folders/29/srh45zys4lz9whn2qdkcwxdc0000gn/T/WizNote/75cefb8a-fcbe-4543-a6e0-13e4037478d8/index_files/74253509.png)
+![img](http://7xravb.com1.z0.glb.clouddn.com/8.jpeg)
 
 #### 1.4.4 生成过程
 
@@ -88,7 +102,7 @@
 5. 构造矩阵
 6. 附加信息（格式、版本信息）
 
-![img](file:///var/folders/29/srh45zys4lz9whn2qdkcwxdc0000gn/T/WizNote/75cefb8a-fcbe-4543-a6e0-13e4037478d8/index_files/77388505.png)
+![img](http://7xravb.com1.z0.glb.clouddn.com/9.jpeg)
 
 
 
@@ -101,3 +115,49 @@
 ### 2.2 使用方式
 
 ### 2.3 源码分析
+
+#### 2.3.1 包结构
+
+- book：搜索与展示书籍信息的相关类
+- camera：关于摄像头
+  - **CameraManager.java**
+- clipboard：粘贴板
+- encode：编码功能的组件 
+  - **QRCodeEncoder.java** 
+  - **MultiFormatWriter.java**
+- history：扫描历史管理
+  - **HistoryManager.java**
+- result：扫描结果
+
+#### 2.3.2 关键类
+
+##### 1. camera
+
+- OpenCameraInterface
+  - open()
+- CameraConfigurationManager
+  - initFromCameraParameters()  — findBestPreviewSizeValue()
+  - setDesiredCameraParameters()
+  - findBestPreviewSizeValue()
+- CameraManager
+  - openDriver()
+
+##### 2. decode
+
+- PreviewCallback  扫描到内容后到回调
+- CaptureActivityHandler  实例化后，开始调用扫描到方法，查看是否扫描到数据
+- CameraManager  - requestPreviewFrame对PreviewCallback注册
+- DecodeHandler - 定义解码Handler
+- 流程图
+
+##### 3. result
+
+- Result
+
+
+- ResultHandlerFactory
+
+##### 4. history share wifi
+
+- DBHelper
+- WifiParsedResult WifiConfigManager
