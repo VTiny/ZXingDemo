@@ -3,7 +3,7 @@
 ### 目录
 
 * [二维码简介](#二维码简介)
-* [ZXing](#ZXing)
+* [ZXing](#2.-zxing)
 * [2.ZXing](#ZXing)
 
 
@@ -109,7 +109,7 @@
 
 
 
-## ZXing
+## 2. ZXing
 
 > [Github地址](https://github.com/zxing/zxing)
 
