@@ -3,8 +3,8 @@
 ### 目录
 
 * [二维码简介](#二维码简介)
-* [2. ZXing](#2. ZXing)
-
+* [ZXing](#2. ZXing)
+* [2. ZXing](#ZXing)
 
 
 
