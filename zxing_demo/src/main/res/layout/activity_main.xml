@@ -8,7 +8,8 @@
     <EditText
         android:id="@+id/edit_generate"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp" />
 
     <Button
         android:id="@+id/btn_generate"
@@ -21,7 +22,7 @@
         android:id="@+id/btn_scan"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="30dp"
         android:text="Scan QR code" />
 
 
@@ -37,14 +38,8 @@
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:layout_marginTop="10dp"
-        android:background="@drawable/txt_border" />
+        android:background="@drawable/txt_border"
+        android:textSize="@dimen/text_size_text" />
 
-
-    <ImageView
-        android:id="@+id/img_generate"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="10dp" />
 
 </LinearLayout>

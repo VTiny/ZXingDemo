@@ -23,17 +23,6 @@ import java.util.Hashtable;
 public abstract class SuperScanActivity extends CaptureActivity {
     private static final int REQUEST_CODE_GET_IMAGE = 1;
 
-    /**
-     * 获取本地图片。
-     * 重写 onGetImageOk 方法监听获取到的图片path。
-     */
-    public void getLocalImage() {
-        Intent innerIntent = new Intent(Intent.ACTION_GET_CONTENT);
-        innerIntent.setType("image/*");
-        Intent wrapperIntent = Intent.createChooser(innerIntent, "选择图片");
-        startActivityForResult(wrapperIntent, REQUEST_CODE_GET_IMAGE);
-    }
-
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);

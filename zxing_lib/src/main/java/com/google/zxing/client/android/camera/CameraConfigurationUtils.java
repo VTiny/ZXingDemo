@@ -275,6 +275,7 @@ public final class CameraConfigurationUtils {
 
   public static Point findBestPreviewSizeValue(Camera.Parameters parameters, Point screenResolution) {
 
+    //相机支持的预览尺寸 （width,height）:(1280,720),(960,720),(720,480),(640,480),(480,320),(320,240),(176,144)
     List<Camera.Size> rawSupportedSizes = parameters.getSupportedPreviewSizes();
     if (rawSupportedSizes == null) {
       Log.w(TAG, "Device returned no supported preview sizes; using default");

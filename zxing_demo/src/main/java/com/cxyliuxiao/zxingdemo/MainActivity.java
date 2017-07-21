@@ -6,7 +6,6 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.cxyliuxiao.zxingdemo.base.BaseActivity;
@@ -23,7 +22,6 @@ public class MainActivity extends BaseActivity {
     private Button scanBtn;
     private TextView scanResultTxt;
     private Button generatebtn;
-    private ImageView generateResultImg;
     private EditText generateTxt;
 
     @Override
@@ -38,13 +36,13 @@ public class MainActivity extends BaseActivity {
         scanBtn = (Button) findViewById(R.id.btn_scan);
         generatebtn = (Button) findViewById(R.id.btn_generate);
         scanResultTxt = (TextView) findViewById(R.id.txt_scan_result);
-        generateResultImg = (ImageView) findViewById(R.id.img_generate);
         generateTxt = (EditText) findViewById(R.id.edit_generate);
     }
 
     @Override
     public void initEvent() {
         super.initEvent();
+
         scanBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -52,6 +50,7 @@ public class MainActivity extends BaseActivity {
                 startActivityForResult(intent, REQUEST_CODE_SCAN);
             }
         });
+
         generatebtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

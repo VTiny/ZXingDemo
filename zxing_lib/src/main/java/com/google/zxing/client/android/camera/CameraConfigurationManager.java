@@ -54,10 +54,11 @@ final class CameraConfigurationManager {
    * Reads, one time, values from the camera that are needed by the app.
    */
   void initFromCameraParameters(OpenCamera camera) {
+    //相机参数
     Camera.Parameters parameters = camera.getCamera().getParameters();
     WindowManager manager = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
     Display display = manager.getDefaultDisplay();
-
+    //角度
     int displayRotation = display.getRotation();
     int cwRotationFromNaturalToDisplay;
     switch (displayRotation) {
@@ -117,6 +118,7 @@ final class CameraConfigurationManager {
     }
     Log.i(TAG, "Clockwise rotation from display to camera: " + cwNeededRotation);
 
+    //构造点 分辨率
     Point theScreenResolution = new Point();
     display.getSize(theScreenResolution);
     screenResolution = theScreenResolution;
@@ -137,6 +139,7 @@ final class CameraConfigurationManager {
     Log.i(TAG, "Preview size on screen: " + previewSizeOnScreen);
   }
 
+  //设置闪光灯、焦点等参数
   void setDesiredCameraParameters(OpenCamera camera, boolean safeMode) {
 
     Camera theCamera = camera.getCamera();

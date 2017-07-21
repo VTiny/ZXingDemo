@@ -84,6 +84,7 @@ public final class CameraManager {
       camera = theCamera;
     }
 
+    //初始化相机参数 选择最佳分辨率
     if (!initialized) {
       initialized = true;
       configManager.initFromCameraParameters(theCamera);
@@ -94,6 +95,7 @@ public final class CameraManager {
       }
     }
 
+    //设置焦点、闪光灯
     Camera cameraObject = theCamera.getCamera();
     Camera.Parameters parameters = cameraObject.getParameters();
     String parametersFlattened = parameters == null ? null : parameters.flatten(); // Save these, temporarily
@@ -116,6 +118,8 @@ public final class CameraManager {
         }
       }
     }
+
+    //设置预览
     cameraObject.setPreviewDisplay(holder);
 
   }
